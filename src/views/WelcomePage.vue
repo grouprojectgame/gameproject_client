@@ -13,7 +13,7 @@
           <br />
           <button class="btn btn-dark" type="submit">Submit</button>
         </form>
-        <router-link to="/guide"> How to play </router-link>
+        <router-link to="/howTo"> How to play </router-link>
       </div>
     </div>
     <router-view></router-view>
@@ -30,6 +30,11 @@ export default {
   },
   methods: {
     addUser () {
+      const sound = require(('../assets/submitNameTheme.mp3'))
+      if (sound) {
+        const audio = new Audio(sound)
+        audio.play()
+      }
       this.$store.commit('ADD_USER', this.user)
       localStorage.setItem('user', this.user)
 
