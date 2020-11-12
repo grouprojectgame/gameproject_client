@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import WelcomePage from '../views/WelcomePage.vue'
+import WinnerPage from '../views/Winner.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'WelcomePage',
     component: WelcomePage
+  },
+  {
+    path: '/',
+    name: 'WinnerPage',
+    component: WinnerPage
   }
 ]
 
