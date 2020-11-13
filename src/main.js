@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import VueSocketIO from 'vue-socket.io'
 import 'bootstrap/dist/css/bootstrap.css'
+import { BootstrapVue } from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(new VueSocketIO({
   debug: true,
@@ -14,6 +16,7 @@ Vue.use(new VueSocketIO({
   }
 }))
 
+Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 new Vue({
