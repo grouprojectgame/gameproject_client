@@ -5,18 +5,18 @@
 </template>
 
 <script>
-import GameBar from "@/components/GameBar.vue";
+import GameBar from '@/components/GameBar.vue'
 export default {
-  name: "Lobby",
+  name: 'Lobby',
   computed: {
-    users() {
-      return this.$store.state.users;
-    },
+    users () {
+      return this.$store.state.users
+    }
   },
   components: {
-    GameBar,
-  },
-};
+    GameBar
+  }
+}
 </script>
 
 <style>

@@ -28,46 +28,46 @@
 
 <script>
 export default {
-    name: 'GameBar',
-    props:['usr'],
-    data() {
+  name: 'GameBar',
+  props: ['usr'],
+  data () {
     return {
-      gameInput: "",
+      gameInput: '',
       score: 0,
-      width: "",
-      max: 20,
-    };
+      width: '',
+      max: 20
+    }
   },
   methods: {
-    nameKeydown(e) {
+    nameKeydown (e) {
       if (/^[^ad]$/.test(e.key)) {
-        e.preventDefault();
+        e.preventDefault()
       }
-    },
+    }
   },
   watch: {
-    gameInput(val) {
-      this.gameInput = val.replace(/(.)\1{1,}/g, "");
-      this.score = this.gameInput.length;
-      let progress = Math.floor(this.score / (this.max / 100));
-      this.width = `width: ${progress}%`;
-      let payload = {
-            gameInput: this.gameInput,
-            score: this.score,
-            width: this.width
-        }
-      this.$socket.emit('update-data',payload)
+    gameInput (val) {
+      this.gameInput = val.replace(/(.)\1{1,}/g, '')
+      this.score = this.gameInput.length
+      const progress = Math.floor(this.score / (this.max / 100))
+      this.width = `width: ${progress}%`
+      const payload = {
+        gameInput: this.gameInput,
+        score: this.score,
+        width: this.width
+      }
+      this.$socket.emit('update-data', payload)
       if (this.score === this.max) {
-        alert("GAME SELESAI");
+        alert('GAME SELESAI')
         this.$router.push('/')
         this.gameInput = ''
       }
-    },
+    }
   },
   sockets: {
-      dataGame:(data) =>{
-          console.log(data);
-      }
+    dataGame: (data) => {
+      console.log(data)
+    }
   }
 }
 </script>
