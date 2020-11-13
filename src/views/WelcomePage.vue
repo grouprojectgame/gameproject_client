@@ -3,7 +3,7 @@
     <div class="welcome-page">
 
       <img src="../assets/runrun.gif" width="200px">
-      <h1>A/D BREAKER</h1>
+      <h1>Quiz Aci Acian</h1>
       <div id="userJoin">
         <form @submit.prevent="addUser">
           <label for="name">enter your name</label>
