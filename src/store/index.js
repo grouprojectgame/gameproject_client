@@ -34,10 +34,18 @@ export default new Vuex.Store({
     dataUser: []
   },
   mutations: {
-
+    ADD_USER(state, payload) {
+      state.name = payload;
+    },
+    ADD_ID(state, payload) {
+      state.IdUser = payload
+    },
+    SET_USER(state, payload) {
+      state.dataUser = payload
+    }
   },
   actions: {
-    addPlayer ({ commit }, payload) {
+    addPlayer ( context , payload) {
       return axios({
         method: 'POST',
         url: '/players',
@@ -48,7 +56,7 @@ export default new Vuex.Store({
       })
         .then(({ data }) => {
           console.log(data)
-          commit('ADD_ID', data.id)
+          context.commit('ADD_ID', data.id)
           return data
         })
         .catch(err => {

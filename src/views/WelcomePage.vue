@@ -2,8 +2,8 @@
     <div id="welcome-page">
     <div class="welcome-page">
 
-      <img src="../assets/runrun.gif" width="200px">
-      <h1>Quiz Aci Acian</h1>
+      <img src="../assets/daryal.png" width="200px">
+      <h1>Quiz Aci Acian with Daryal</h1>
       <div id="userJoin">
         <form @submit.prevent="addUser">
           <label for="name">enter your name</label>
@@ -34,12 +34,13 @@ export default {
         user: this.user
       }
       this.$socket.emit('add-user', payload)
-      const sound = require(('../assets/submitNameTheme.mp3'))
+      const sound = require(('../assets/tariksissemongko.mp3'))
       if (sound) {
         const audio = new Audio(sound)
         audio.play()
       }
-      this.$router.push('/Game')
+      localStorage.user = this.user
+      this.$router.push('/game')
     }
   }
 
