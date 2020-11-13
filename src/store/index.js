@@ -34,18 +34,18 @@ export default new Vuex.Store({
     dataUser: []
   },
   mutations: {
-    ADD_USER(state, payload) {
-      state.name = payload;
+    ADD_USER (state, payload) {
+      state.name = payload
     },
-    ADD_ID(state, payload) {
+    ADD_ID (state, payload) {
       state.IdUser = payload
     },
-    SET_USER(state, payload) {
+    SET_USER (state, payload) {
       state.dataUser = payload
     }
   },
   actions: {
-    addPlayer ( context , payload) {
+    addPlayer (context, payload) {
       return axios({
         method: 'POST',
         url: '/players',
