@@ -13,7 +13,7 @@
           <br />
           <button class="btn btn-dark" type="submit">Submit</button>
         </form>
-        <router-link to="/howTo"> How to play </router-link>
+        <a href="/howTo">How to play</a>
       </div>
     </div>
     <router-view></router-view>
@@ -30,21 +30,16 @@ export default {
   },
   methods: {
     addUser () {
+      const payload = {
+        user: this.user
+      }
+      this.$socket.emit('add-user', payload)
       const sound = require(('../assets/submitNameTheme.mp3'))
       if (sound) {
         const audio = new Audio(sound)
         audio.play()
       }
-      this.$store.commit('ADD_USER', this.user)
-      localStorage.setItem('user', this.user)
-
-      this.$store.dispatch('addPlayer', this.user)
-        .then(response => {
-          this.$router.push('/game')
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      this.$router.push('/Game')
     }
   }
 

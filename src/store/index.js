@@ -30,7 +30,7 @@ export default new Vuex.Store({
       }
     ],
     name: '',
-    idUser: null,
+    IdUser: null,
     dataUser: []
   },
   mutations: {
