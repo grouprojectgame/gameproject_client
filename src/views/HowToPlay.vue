@@ -3,12 +3,13 @@
         <div class="content">
             <img src="https://nerdist.com/wp-content/uploads/2019/03/20181004_g_howtoplay_logo_338x170.png" width="200px">
             <div>
-                <h3>HOW TO PLAY A/D BREAKER RUN</h3>
+                <h3>How To Play Aci-acian</h3>
                 <ul style="text-align: left;">
-                    <li>PENCAT BUTTON A DAN D SECARA BERGANTIAN UNTUK BERLARI </li>
-                    <li>PENCAT BUTTON A DAN D SECARA BERGANTIAN UNTUK BERLARI </li>
-                    <li>PENCAT BUTTON A DAN D SECARA BERGANTIAN UNTUK BERLARI </li>
-                    <li>KALAU SALAH KAMU MUNDUR HEHEHEHEHEHEE </li>
+                    <li>Terdapat lima pertanyaan yang harus ditebak </li>
+                    <li>Ketik Jawaban di kotak yang tersedia</li>
+                    <li>Skor 1 Jawaban benar 100 poin</li>
+                    <li>Pemain harus menebak secara benar untuk lanjut ke gambar selanjutnya</li>
+                    <li>Pemain dinyatakan menang ketika berhasil menebak kelima gambar pertanyaan</li>
                 </ul>
             </div>
             <button class="btn btn-dark" @click="$router.push('/')"> Close </button>
